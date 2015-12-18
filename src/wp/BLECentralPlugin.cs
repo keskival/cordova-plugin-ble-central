@@ -38,6 +38,10 @@ public class BLECentralPlugin : BaseCommand
       DispatchCommandResult(new PluginResult(PluginResult.Status.ERROR, "Not Implemented"));
     }
 
+    public void getAddress(string args)
+    {
+      notImplemented();
+    }
     public void scan(string args)
     {
       notImplemented();

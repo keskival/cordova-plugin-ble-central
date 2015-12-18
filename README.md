@@ -49,6 +49,7 @@ Note that this plugin's id changed from `com.megster.cordova.ble` to `cordova-pl
 
 ## Methods
 
+- [ble.getAddress](#getAddress)
 - [ble.scan](#scan)
 - [ble.startScan](#startscan)
 - [ble.stopScan](#stopscan)
@@ -63,6 +64,12 @@ Note that this plugin's id changed from `com.megster.cordova.ble` to `cordova-pl
 - [ble.isConnected](#isconnected)
 - [ble.showBluetoothSettings](#showbluetoothsettings)
 - [ble.enable](#enable)
+
+## getAddress
+
+Gets the local Bluetooth address.
+
+    ble.getAddress(success, failure);
 
 ## scan
 

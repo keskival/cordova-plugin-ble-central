@@ -3,6 +3,10 @@ function notSupported() {
 }
 
 module.exports = {
+    getAddress: function(success, failure) {
+      notSupported();
+      if (failure) failure();
+    },
     scan: function(services, seconds, success, failure) {
         notSupported();
         if (failure) failure();

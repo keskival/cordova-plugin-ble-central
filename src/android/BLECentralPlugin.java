@@ -37,6 +37,7 @@ import java.util.*;
 public class BLECentralPlugin extends CordovaPlugin implements BluetoothAdapter.LeScanCallback {
 
     // actions
+    private static final String GET_ADDRESS = "getAddress"; // Returns the Bluetooth id of the local device.
     private static final String SCAN = "scan";
     private static final String START_SCAN = "startScan";
     private static final String STOP_SCAN = "stopScan";
@@ -83,7 +84,13 @@ public class BLECentralPlugin extends CordovaPlugin implements BluetoothAdapter.
 
         boolean validAction = true;
 
-        if (action.equals(SCAN)) {
+        if (action.equals(GET_ADDRESS)) {
+
+            String address = bluetoothAdapter.getAddress();
+            PluginResult result = new PluginResult(PluginResult.Status.OK, address);
+            callbackContext.sendPluginResult(result);
+
+        } else if (action.equals(SCAN)) {
 
             UUID[] serviceUUIDs = parseServiceUUIDList(args.getJSONArray(0));
             int scanSeconds = args.getInt(1);
